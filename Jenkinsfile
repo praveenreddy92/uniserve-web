@@ -6,9 +6,9 @@ pipeline {
         build 'AutodeploymentTest'
       }
     }
-    stage('deploy') {
+    stage('build_anotherenv') {
       steps {
-        sh 'sh /root/apache-tomcat-7.0.82/bin/startup.sh'
+        build 'dev_deployment'
       }
     }
   }
